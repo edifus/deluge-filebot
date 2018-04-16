@@ -1,0 +1,10 @@
+deb http://ubuntu.mirrors.ovh.net/ubuntu xenial main restricted
+deb http://ubuntu.mirrors.ovh.net/ubuntu xenial-updates main restricted
+deb http://ubuntu.mirrors.ovh.net/ubuntu xenial universe
+deb http://ubuntu.mirrors.ovh.net/ubuntu xenial-updates universe
+deb http://ubuntu.mirrors.ovh.net/ubuntu xenial multiverse
+deb http://ubuntu.mirrors.ovh.net/ubuntu xenial-updates multiverse
+deb http://ubuntu.mirrors.ovh.net/ubuntu xenial-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu xenial-security main restricted
+deb http://security.ubuntu.com/ubuntu xenial-security universe
+deb http://security.ubuntu.com/ubuntu xenial-security multiverse
