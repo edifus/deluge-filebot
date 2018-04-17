@@ -2,7 +2,7 @@
 
 Based on linuxserver.io ubuntu base and their deluge container. Added Java and Filebot for FilebotTool plugin support.
 
-* Mount downloads to /downloads or /mnt/downloads, or /data/downlaods.. etc
+* Mount downloads to /downloads or /mnt/downloads, or /data/downloads.. etc
 * Environment variables are same as linuxserver.io Deluge container; PUID, GUID, TZ, UMASK_SET
     
 ```
