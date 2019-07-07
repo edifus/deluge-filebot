@@ -15,7 +15,6 @@ ARG FILEBOT_PACKAGE="filebot_${FILEBOT_VERSION}_amd64.deb"
 COPY sources.list /etc/apt/
 
 RUN \
- echo "**** configure apt repos ****" && \
  apt-get update && \
  apt-get -y install --no-install-recommends software-properties-common && \
  add-apt-repository ppa:deluge-team/ppa && \
