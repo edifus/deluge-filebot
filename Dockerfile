@@ -25,26 +25,15 @@ RUN \
  apt-get -y install --no-install-recommends software-properties-common && \
  add-apt-repository ppa:deluge-team/ppa && \
  apt-get update && \
-
-# install deluge
  echo "**** install deluge ****" && \
  apt-get -y install --no-install-recommends deluged deluge-web deluge-console mediainfo libchromaprint-tools inotify-tools && \
-
-# install filebot
  echo "**** install filebot ****" && \
  curl -L -O https://downloads.sourceforge.net/project/filebot/filebot/FileBot_${FILEBOT_VERSION}/${FILEBOT_PACKAGE} && \
  echo "${FILEBOT_SHA256} *${FILEBOT_PACKAGE}" | sha256sum --check --strict && \
  dpkg -i ${FILEBOT_PACKAGE} && \
  rm ${FILEBOT_PACKAGE} && \
-
-# install java
  echo "**** install java8 ****" && \
- echo oracle-java${JAVA_VERSION}-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
- apt-get install -y --no-install-recommends oracle-java${JAVA_VERSION}-installer oracle-java${JAVA_VERSION}-set-default && \
- update-java-alternatives -s java-8-oracle && \
- echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /etc/bash.bashrc && \
-
-# cleanup
+ apt-get install -y --no-install-recommends openjdk-8-jre-headless && \
  echo "**** cleanup ****" && \
  apt-get clean && \
  rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /var/cache/oracle-jdk${JAVA_VERSION}-installer
