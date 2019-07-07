@@ -5,10 +5,8 @@ MAINTAINER edifus <edifus@gmail.com>
 # environment variables
 ENV \
  HOME="/config" \
- JAVA_HOME="/usr/lib/jvm/java-8-oracle" \
  PYTHON_EGG_CACHE="/config/plugins/.python-eggs"
 
-ARG JAVA_VERSION="8"
 ARG FILEBOT_VERSION="4.7.9"
 ARG FILEBOT_SHA256="892723dcec8fe5385ec6665db9960e7c1a88e459a60525c02afb7f1195a50523"
 ARG FILEBOT_PACKAGE="filebot_${FILEBOT_VERSION}_amd64.deb"
@@ -18,9 +16,6 @@ COPY sources.list /etc/apt/
 
 RUN \
  echo "**** configure apt repos ****" && \
- echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' >> /etc/apt/sources.list && \
- echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' >> /etc/apt/sources.list && \
- apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 && \
  apt-get update && \
  apt-get -y install --no-install-recommends software-properties-common && \
  add-apt-repository ppa:deluge-team/ppa && \
@@ -36,7 +31,7 @@ RUN \
  apt-get install -y --no-install-recommends openjdk-8-jre-headless && \
  echo "**** cleanup ****" && \
  apt-get clean && \
- rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /var/cache/oracle-jdk${JAVA_VERSION}-installer
+ rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # add linuxserver.io files
 COPY root/ /
