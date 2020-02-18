@@ -5,6 +5,7 @@ MAINTAINER edifus <edifus@gmail.com>
 # environment variables
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV PYTHON_EGG_CACHE="/config/plugins/.python-eggs"
+ENV HOME="/config"
 
 ARG FILEBOT_VERSION="4.7.9"
 ARG FILEBOT_PACKAGE="filebot_${FILEBOT_VERSION}_amd64.deb"
