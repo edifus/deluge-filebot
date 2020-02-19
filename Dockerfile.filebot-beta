@@ -25,7 +25,7 @@ RUN \
 	mediainfo libchromaprint-tools inotify-tools \
 	openjdk-11-jre-headless libjna-java && \
  curl -L -O https://get.filebot.net/filebot/BETA/${FILEBOT_PACKAGE} && \
-	apt install ./${FILEBOT_PACKAGE} && \
+	dpkg -i ${FILEBOT_PACKAGE} && \
 	rm ${FILEBOT_PACKAGE} && \
  apt-get autoclean -y && \
  apt-get autoremove --purge -y && \
