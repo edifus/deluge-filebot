@@ -29,4 +29,4 @@ RUN \
 COPY root/ /
 
 # volumes
-VOLUME /config /downloads
+VOLUME /config
