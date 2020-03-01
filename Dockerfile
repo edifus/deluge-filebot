@@ -13,25 +13,17 @@ ARG FILEBOT_PACKAGE="filebot_${FILEBOT_VERSION}_amd64.deb"
 # install software
 RUN \
  apt-get update && \
- apt-get install -y \
-	gnupg && \
+ apt-get install -y gnupg && \
  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C5E6A5ED249AD24C && \
- echo "deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu bionic main" >> \
-	/etc/apt/sources.list.d/deluge.list && \
+ echo "deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu bionic main" >> /etc/apt/sources.list.d/deluge.list && \
  apt-get update && \
- apt-get install -y \
-	deluged deluge-console deluge-web \
-	p7zip-full unrar unzip \
-	mediainfo libchromaprint-tools inotify-tools \
-	openjdk-8-jre-headless && \
+ apt-get install -y deluged deluge-console deluge-web p7zip-full unrar unzip mediainfo libchromaprint-tools inotify-tools openjdk-8-jre-headless && \
  curl -L -O https://downloads.sourceforge.net/project/filebot/filebot/FileBot_${FILEBOT_VERSION}/${FILEBOT_PACKAGE} && \
-	dpkg -i ${FILEBOT_PACKAGE} && \
-	rm ${FILEBOT_PACKAGE} && \
+ dpkg -i ${FILEBOT_PACKAGE} && \
+ rm ${FILEBOT_PACKAGE} && \
  apt-get autoclean -y && \
  apt-get autoremove --purge -y && \
- rm -rf /tmp/* \
-	/var/lib/apt/lists/* \
-	/var/tmp/*
+ rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # add local files
 COPY root/ /
