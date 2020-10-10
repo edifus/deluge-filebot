@@ -7,7 +7,7 @@ ARG DEBIAN_FRONTEND="noninteractive"
 ENV PYTHON_EGG_CACHE="/config/plugins/.python-eggs"
 ENV HOME="/config"
 
-ARG FILEBOT_VERSION="4.9.1"
+ARG FILEBOT_VERSION="4.9.2"
 ARG FILEBOT_PACKAGE="FileBot_${FILEBOT_VERSION}_universal.deb"
 
 # install software
