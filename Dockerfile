@@ -26,13 +26,13 @@ RUN \
  apt-get update && \
  apt-get install -y deluged deluge-console deluge-web \
                     p7zip-full unrar unzip \
-                    libchromaprint-tools inotify-tools \
+                    libchromaprint-tools inotify-tools libcurl3-gnutls libmms0 \
                     openjdk-11-jre-headless libjna-java && \
  curl -L -O https://get.filebot.net/filebot/FileBot_${FILEBOT_VERSION}/${FILEBOT_PACKAGE} && \
  curl -L -O https://mediaarea.net/download/binary/mediainfo/${MEDIAINFO_VERSION}/${MEDIAINFO_PACKAGE} && \
  curl -L -O https://mediaarea.net/download/binary/libmediainfo0/${MEDIAINFO_VERSION}/${LIBMEDIAINFO_PACKAGE} && \
  curl -L -O https://mediaarea.net/download/binary/libzen0/${LIBZEN_VERSION}/${LIBZEN_PACKAGE} && \
- dpkg -i ${FILEBOT_PACKAGE} ${LIBZEN_PACKAGE} ${LIBMEDIAINFO_PACKAGE} ${MEDIAINFO_PACKAGE} && \
+ dpkg -i ${LIBZEN_PACKAGE} ${LIBMEDIAINFO_PACKAGE} ${MEDIAINFO_PACKAGE} ${FILEBOT_PACKAGE} && \
  rm ${FILEBOT_PACKAGE} ${LIBZEN_PACKAGE} ${LIBMEDIAINFO_PACKAGE} ${MEDIAINFO_PACKAGE} && \
  apt-get autoclean -y && \
  apt-get autoremove --purge -y && \
