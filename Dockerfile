@@ -16,8 +16,14 @@ RUN \
  apt-get install -y gnupg && \
  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C5E6A5ED249AD24C && \
  echo "deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu bionic main" >> /etc/apt/sources.list.d/deluge.list && \
+ echo "deb-src http://ppa.launchpad.net/deluge-team/stable/ubuntu bionic main" >> /etc/apt/sources.list.d/deluge.list && \
  apt-get update && \
- apt-get install -y deluged deluge-console deluge-web p7zip-full unrar unzip mediainfo libchromaprint-tools inotify-tools openjdk-11-jre-headless libjna-java && \
+ apt-get install -y deluged deluge-console deluge-web \
+                    python3-future python3-requests \
+                    p7zip-full unrar unzip \
+                    mediainfo libchromaprint-tools \
+                    inotify-tools \
+                    openjdk-11-jre-headless libjna-java && \
  curl -L -O https://get.filebot.net/filebot/FileBot_${FILEBOT_VERSION}/${FILEBOT_PACKAGE} && \
  dpkg -i ${FILEBOT_PACKAGE} && \
  rm ${FILEBOT_PACKAGE} && \
