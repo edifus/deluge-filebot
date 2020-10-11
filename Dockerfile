@@ -10,11 +10,11 @@ ENV HOME="/config"
 ARG FILEBOT_VERSION="4.9.2"
 ARG FILEBOT_PACKAGE="FileBot_${FILEBOT_VERSION}_universal.deb"
 
-ARG MEDIAINFO_VERSION="20.03"
+ARG MEDIAINFO_VERSION="20.09"
 ARG LIBZEN_VERSION="0.4.38"
-ARG MEDIAINFO_PACKAGE="mediainfo_${MEDIAINFO_VERSION}-1_amd64.xUbuntu_18.10.deb"
-ARG LIBMEDIAINFO_PACKAGE="libmediainfo0v5_${MEDIAINFO_VERSION}-1_amd64.xUbuntu_18.10.deb"
-ARG LIBZEN_PACKAGE="libzen0v5_${LIBZEN_VERSION}-1_amd64.xUbuntu_18.10.deb"
+ARG MEDIAINFO_PACKAGE="mediainfo_${MEDIAINFO_VERSION}-1_amd64.xUbuntu_18.04.deb"
+ARG LIBMEDIAINFO_PACKAGE="libmediainfo0v5_${MEDIAINFO_VERSION}-1_amd64.xUbuntu_18.04.deb"
+ARG LIBZEN_PACKAGE="libzen0v5_${LIBZEN_VERSION}-1_amd64.xUbuntu_18.04.deb"
 
 # install software
 RUN \
@@ -26,8 +26,7 @@ RUN \
  apt-get update && \
  apt-get install -y deluged deluge-console deluge-web \
                     p7zip-full unrar unzip \
-                    mediainfo libchromaprint-tools \
-                    inotify-tools \
+                    libchromaprint-tools inotify-tools \
                     openjdk-11-jre-headless libjna-java && \
  curl -L -O https://get.filebot.net/filebot/FileBot_${FILEBOT_VERSION}/${FILEBOT_PACKAGE} && \
  curl -L -O https://mediaarea.net/download/binary/mediainfo/${MEDIAINFO_VERSION}/${MEDIAINFO_PACKAGE} && \
