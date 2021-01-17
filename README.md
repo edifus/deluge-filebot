@@ -1,6 +1,6 @@
 # deluge-filebot
 
-DEPRECIATED: No longer updated - See [edifus/docker-deluge](https://github.com/edifus/docker-deluge) - [Filebot mod](https://github.com/edifus/deluge-filebot-mod) support in README
+DEPRECIATED: No longer updated - See [edifus/docker-deluge](https://github.com/edifus/docker-deluge) - [Filebot mod](https://github.com/edifus/docker-mods/tree/deluge-filebot) support in README
 
 ![automation](https://img.shields.io/docker/cloud/automated/edifus/deluge-filebot?style=plastic)
 ![build status](https://img.shields.io/docker/cloud/build/edifus/deluge-filebot?style=plastic)
